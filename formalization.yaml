@@ -59,7 +59,7 @@ sources:
       unrestricted bound of Theorem B; the manuscript of Paper IV claims no priority for these
       statements. Not used in the proofs.
     license: "unknown"
-    author_endorsement: "none"
+    author_endorsement: "not-contacted"
   - title: "Clique partitions of chordal graphs with linear error"
     authors:
       - "Anonymous (repository credits: Morluto, N0zoM1z0)"
@@ -71,7 +71,7 @@ sources:
       Also establishes the eventual maximum for chordal graphs (reference [5] of the manuscript);
       Paper IV claims no priority for that statement. Not used in the proofs.
     license: "unknown"
-    author_endorsement: "none"
+    author_endorsement: "not-contacted"
   - title: "Clique partitions of chordal graphs"
     authors:
       - "Paul Erdős"
@@ -124,25 +124,37 @@ automation:
       models: ["Aristotle (Harmonic)"]
       framework: "Aristotle CLI"
       tool_setup: >-
-        Contributed, under the author's direction, Lean proofs of the freeze (Lean 4.28), from
-        formal statements and proof plans, as acknowledged in the manuscript and its formal
-        companion.
+        Under the author's direction, contributed to exploring approaches, searching for
+        counterexamples, developing proofs, and formalizing and reviewing them in Lean (the freeze,
+        Lean 4.28); its role was not limited to translating finished proofs (manuscript and formal
+        companion, "Use of artificial intelligence and computational tools").
       cost:
         wall_time: "not tracked"
         spend_usd: "not tracked"
         hardware: "API-only"
-      prompting_notes: "Formal statements and proof plans supplied by the author."
+      prompting_notes: "Directed by the author."
     - method: "agent"
-      models: ["ChatGPT/Codex (OpenAI)"]
-      framework: "Codex"
+      models: ["Claude (Anthropic)", "ChatGPT/Codex (OpenAI)"]
+      framework: "chat assistants and Codex"
       tool_setup: >-
-        Used by the author to explore and check arguments and to develop and integrate Lean sources
-        of the freeze, as acknowledged in the manuscript.
+        Used by the author to explore and check arguments and to prepare the manuscript, as
+        acknowledged in the manuscript; Codex also in developing Lean sources of the freeze.
       cost:
         wall_time: "not tracked"
         spend_usd: "not tracked"
         hardware: "API-only"
       prompting_notes: "Natural-language instructions by the author."
+    - method: "other"
+      models: ["Certo", "Jacobian"]
+      framework: "computational tools (github.com/jtraverso/certo-math, github.com/morluto/jacobian)"
+      tool_setup: >-
+        Used to explore instances, check identities and assess candidates; computations reviewed
+        within their stated scope, not premises of the formal proof.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "Not applicable."
     - method: "agent"
       models: ["Claude Opus 5.5"]
       framework: "Claude Code (Anthropic)"
