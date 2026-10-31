@@ -19,7 +19,7 @@ bound `n²/6 + O(n)` on the clique partition number of chordal graphs.
 | `quadratic_constant_isLeast` | §6.3 | `1/6` is the least quadratic coefficient. |
 | `theorem_3_1` | Theorem 3.1 | Uniform mixed rounding: fractional triangle/`K₄` packings are matched by physical ones up to `εn²`. |
 | `theorem_6_1` | Theorem 6.1 | Integral stability: a near-extremal chordal graph has a clique root with explicit outside-edge and missing-incidence bounds and edit distance at most `16δ` to a complete-split graph. |
-| `corollary_6_1a` | Corollary 6.1a | For that root, every partition with at most `M(n) + τ` pieces has at most `τ + 48δ` noncanonical pieces. |
+| `corollary_6_1a` | Corollary 6.1a | One clique root satisfies all the conclusions of Theorem 6.1 and, for it, every partition with at most `M(n) + τ` pieces has at most `τ + 48δ` noncanonical pieces. |
 | `identity_6_7b` | (6.7b) | The root-defect identity. |
 | `corollary_6_2` | Corollary 6.2 | For large `n`, the extremal chordal graphs are the complete-split graphs with a core of optimal size, and `cp = c₄ = M(n)` on them. |
 

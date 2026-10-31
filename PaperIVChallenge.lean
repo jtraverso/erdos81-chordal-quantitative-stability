@@ -35,8 +35,9 @@ Statements, in the namespace `ErdosPaperIV`:
   four have at least `M(n) − δ` pieces, `0 ≤ δ ≤ γn²`, has a clique root `R` with
   `splitBaseline n |R| ≤ M(n)`, explicit bounds on its outside edges and missing incidences, and
   edit distance at most `16δ` to the complete-split graph with core `R` (Theorem 6.1);
-* `corollary_6_1a`: for that root, every clique partition with at most `M(n) + τ` pieces has at
-  most `τ + 48δ` noncanonical pieces (Corollary 6.1a);
+* `corollary_6_1a`: one clique root satisfies all the conclusions of Theorem 6.1 and, for it,
+  every clique partition with at most `M(n) + τ` pieces has at most `τ + 48δ` noncanonical pieces
+  (Corollary 6.1a, same root);
 * `identity_6_7b`: the root-defect identity `∑_K rootPieceDefect R K = |Q| − splitBaseline n |R|
   + missingIncidences + 3·|outside edges|` (identity (6.7b));
 * `corollary_6_2`: for large `n`, a chordal graph has `cp(G) = M(n)` iff `c₄(G) = M(n)` iff it is a
@@ -297,9 +298,10 @@ theorem theorem_6_1 :
                 (graphEdgeSupport (splitGraph R (Finset.univ \ R))) : ℚ) ≤ 16 * δ := by
   sorry
 
-/-- **Corollary 6.1a (stability of partitions).** Under the hypotheses of Theorem 6.1 there is a
-clique root `R` such that every clique partition with at most `M(n) + τ` pieces has at most
-`τ + 48δ` noncanonical pieces. -/
+/-- **Corollary 6.1a (stability of partitions), with the root of Theorem 6.1.** Under the
+hypotheses of Theorem 6.1 there is one clique root `R` satisfying all the conclusions of Theorem 6.1
+such that, moreover, every clique partition with at most `M(n) + τ` pieces has at most `τ + 48δ`
+noncanonical pieces. -/
 theorem corollary_6_1a :
     ∃ N : ℕ, ∀ n : ℕ, N ≤ n →
       ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj], IsChordal G →
@@ -308,6 +310,13 @@ theorem corollary_6_1a :
               (targetSize n : ℚ) - δ ≤ (Q.size : ℚ)) →
           ∃ R : Finset (Fin n), G.IsClique (R : Set (Fin n)) ∧
             2 ≤ R.card ∧ R.card ≤ (Finset.univ \ R).card ∧
+            splitBaseline (n : ℚ) R.card ≤ (targetSize n : ℚ) ∧
+            (117 : ℚ) / 1825 * ((outsideEdges G R).card : ℚ) +
+              (12687 : ℚ) / 20000 * (missingIncidences G R : ℚ) ≤ δ ∧
+            (targetSize n : ℚ) - splitBaseline (n : ℚ) R.card +
+              ((outsideEdges G R).card : ℚ) / 16 + (missingIncidences G R : ℚ) / 2 ≤ δ ∧
+            (editDist G.edgeFinset
+                (graphEdgeSupport (splitGraph R (Finset.univ \ R))) : ℚ) ≤ 16 * δ ∧
             ∀ (Q : CliquePartition G) (τ : ℚ),
               (Q.size : ℚ) ≤ targetSize n + τ →
               ((noncanonicalPieces R Q).card : ℚ) ≤ τ + 48 * δ := by

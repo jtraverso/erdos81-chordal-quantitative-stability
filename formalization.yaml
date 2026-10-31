@@ -14,8 +14,9 @@ project:
     1/6 is the least quadratic coefficient (§6.3); the uniform mixed rounding of fractional
     triangle/K₄ packings (Theorem 3.1); integral stability with explicit constants and edit
     distance at most 16δ to a complete-split graph, for 0 ≤ δ ≤ γn² with γ = 10⁻¹⁶/4 (Theorem
-    6.1); same-root control of near-optimal partitions, at most τ + 48δ noncanonical pieces
-    (Corollary 6.1a); the root-defect identity (6.7b); and the eventual classification of the
+    6.1); same-root control of near-optimal partitions: one clique root satisfies all the
+    conclusions of Theorem 6.1 and, for it, every partition with at most M(n) + τ pieces has at
+    most τ + 48δ noncanonical pieces (Corollary 6.1a); the root-defect identity (6.7b); and the eventual classification of the
     extremal chordal graphs as complete-split graphs with a core of optimal size (Corollary 6.2).
     Eight statements. The thresholds N are existential; b and N are not claimed optimal.
   authors:
