@@ -1,0 +1,21 @@
+{
+  "challenge_module": "PaperIVChallenge",
+  "solution_module": "PaperIVSolution",
+  "theorem_names": [
+    "ErdosPaperIV.theorem_A",
+    "ErdosPaperIV.theorem_B",
+    "ErdosPaperIV.quadratic_constant_isLeast",
+    "ErdosPaperIV.theorem_3_1",
+    "ErdosPaperIV.theorem_6_1",
+    "ErdosPaperIV.corollary_6_1a",
+    "ErdosPaperIV.identity_6_7b",
+    "ErdosPaperIV.corollary_6_2"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

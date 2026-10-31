@@ -1,0 +1,49 @@
+name = "erdos81_paper_iv"
+version = "0.1.0"
+defaultTargets = ["PaperIV", "MixedRounding", "PaperI"]
+requiresModuleSystem = true
+
+[leanOptions]
+relaxedAutoImplicit = false
+linter.unusedSimpArgs = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.35.0-rc3"
+
+[[require]]
+name = "asymptotic_triangle_packing"
+git = "https://github.com/jtraverso/asymptotic-triangle-packing"
+rev = "760e503972aad8ca9da7904ce72e5cce405f5991"
+
+[[require]]
+name = "chordal_classes"
+git = "https://github.com/jtraverso/chordal-split-threshold-graphs"
+rev = "ed65dcdc7339767d3e8e412420abbf54eae65ddb"
+
+[[lean_lib]]
+name = "PaperI"
+roots = ["PaperI"]
+globs = ["PaperI", "PaperI.+"]
+moreLeanArgs = ["-s", "32768"]
+
+[[lean_lib]]
+name = "MixedRounding"
+roots = ["MixedRounding"]
+globs = ["MixedRounding", "MixedRounding.+"]
+moreLeanArgs = ["-s", "32768"]
+
+[[lean_lib]]
+name = "PaperIV"
+roots = ["PaperIV"]
+globs = ["PaperIV", "PaperIV.+"]
+moreLeanArgs = ["-s", "32768"]
+
+[[lean_lib]]
+name = "PaperIVChallenge"
+roots = ["PaperIVChallenge"]
+
+[[lean_lib]]
+name = "PaperIVSolution"
+roots = ["PaperIVSolution"]
