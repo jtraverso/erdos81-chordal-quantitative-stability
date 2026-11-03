@@ -1,6 +1,6 @@
 name = "erdos81_paper_iv"
 version = "0.1.0"
-defaultTargets = ["PaperIV", "MixedRounding", "PaperI"]
+defaultTargets = ["PaperIV", "PaperIVExt", "MixedRounding", "PaperI"]
 requiresModuleSystem = true
 
 [leanOptions]
@@ -38,6 +38,12 @@ moreLeanArgs = ["-s", "32768"]
 name = "PaperIV"
 roots = ["PaperIV"]
 globs = ["PaperIV", "PaperIV.+"]
+moreLeanArgs = ["-s", "32768"]
+
+[[lean_lib]]
+name = "PaperIVExt"
+roots = ["PaperIVExt"]
+globs = ["PaperIVExt", "PaperIVExt.+"]
 moreLeanArgs = ["-s", "32768"]
 
 [[lean_lib]]

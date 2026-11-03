@@ -5,6 +5,8 @@ Authors: Juan Pablo Traverso Gianini
 -/
 module
 
+public import PaperIV.A4AllDefects
+public import PaperIV.A4ExceptionalBound
 public import PaperIV.AssignmentEquivalence
 public import PaperIV.AssignmentLemma
 public import PaperIV.CanonicalBudget
@@ -34,6 +36,15 @@ public import PaperIV.CountingTelescope
 public import PaperIV.CriticalBranch
 public import PaperIV.CriticalResidual
 public import PaperIV.CyclicLayering
+public import PaperIV.DefectApexStability
+public import PaperIV.DefectComparatorGraph
+public import PaperIV.DefectComparatorLower
+public import PaperIV.DefectComparatorRootedDefect
+public import PaperIV.DefectDeletionRoute
+public import PaperIV.DefectExplicitPublication
+public import PaperIV.DefectOneRootStar
+public import PaperIV.DefectSharpPublication
+public import PaperIV.DefectTargetArithmetic
 public import PaperIV.DeficitAlongPath
 public import PaperIV.DegreeConcentration
 public import PaperIV.DenseBagClosure
@@ -42,18 +53,28 @@ public import PaperIV.DiracEngine
 public import PaperIV.DiscardCounts
 public import PaperIV.DonationBudget
 public import PaperIV.DoubledPattern
+public import PaperIV.DyadicHosting
 public import PaperIV.E01Ledger
+public import PaperIV.E11Core
+public import PaperIV.E11K10
 public import PaperIV.EditFirstEntry
 public import PaperIV.EditMetric
+public import PaperIV.EditRouteChordalBridge
+public import PaperIV.EditRouteCliqueRecovery
+public import PaperIV.EditRouteLemmaK
+public import PaperIV.EditRouteLocalization
+public import PaperIV.EditRouteUnconditional
 public import PaperIV.EighthMoment
 public import PaperIV.EpsilonBudgetFull
 public import PaperIV.EquitableEdgeColouring
 public import PaperIV.EquitableKempe
 public import PaperIV.Erdos81AllOrders
 public import PaperIV.Erdos81Unconditional
+public import PaperIV.ErdosKPartite
 public import PaperIV.ExteriorTriangleLift
 public import PaperIV.ExtremalClassification
 public import PaperIV.F4EditRobustness
+public import PaperIV.FarRegimeAllGraphs
 public import PaperIV.FarRounding
 public import PaperIV.FarRoundingBatchBridge
 public import PaperIV.FarRoundingFromAssignment
@@ -63,7 +84,10 @@ public import PaperIV.FarSlackQuantitative
 public import PaperIV.FiniteHeavySelection
 public import PaperIV.FiniteLPDuality
 public import PaperIV.FirstEntryWindow
+public import PaperIV.FixedL4Localization
+public import PaperIV.FixedL4LocalizationAllEps
 public import PaperIV.FracNibbleRepaired
+public import PaperIV.GalvinRectangle
 public import PaperIV.GatedSplitTargetBridge
 public import PaperIV.GatedTerminalSplit
 public import PaperIV.GraphFamilyDistance
@@ -77,8 +101,12 @@ public import PaperIV.JointTwoQuotaPhysical
 public import PaperIV.JointTypedNibbleGate
 public import PaperIV.JointTypedQuota
 public import PaperIV.K4UniformNibbleCounts
+public import PaperIV.LiftedHostingAssembly
+public import PaperIV.LiftedPieceBudget
+public import PaperIV.LiftedPieceGreedy
 public import PaperIV.LineGraphColouring
 public import PaperIV.LocalStabilityS01S03
+public import PaperIV.LossBudget
 public import PaperIV.LowTriangleReduction
 public import PaperIV.MarkedQuotaGate
 public import PaperIV.MarkedQuotaNibble
@@ -110,6 +138,7 @@ public import PaperIV.NibbleHypotheses
 public import PaperIV.NibblePort
 public import PaperIV.OneFactorization
 public import PaperIV.OneStepEstimate
+public import PaperIV.OptimalTemplateObstruction
 public import PaperIV.OutsideCounting
 public import PaperIV.OwnerCoinMoments
 public import PaperIV.OwnerCoins
@@ -201,12 +230,14 @@ public import PaperIV.RootRegularizationBridge
 public import PaperIV.RootVocabulary
 public import PaperIV.RootedCounting
 public import PaperIV.RootedCountingBridge
+public import PaperIV.RootedDefectZeroChordal
 public import PaperIV.RootedEliminationOrder
 public import PaperIV.RootedK3Counting
 public import PaperIV.RootedK3Pool
 public import PaperIV.RootedK4Counting
 public import PaperIV.RootedK4Degree
 public import PaperIV.RootedK4Pool
+public import PaperIV.RootedSimplicialDefect
 public import PaperIV.RootedVariance
 public import PaperIV.RoundRobinPairs
 public import PaperIV.RoundingTrichotomy
@@ -233,6 +264,7 @@ public import PaperIV.SplitFamilyNonempty
 public import PaperIV.SplitFarRounding
 public import PaperIV.SplitItems
 public import PaperIV.SplitLPToPhysicalLoads
+public import PaperIV.SplitMixedGap
 public import PaperIV.SplitPackingObstruction
 public import PaperIV.SplitTerminalLP
 public import PaperIV.SplitTerminalNear
@@ -245,6 +277,7 @@ public import PaperIV.SplitUniformIncidence
 public import PaperIV.SpreadPacking
 public import PaperIV.SpreadRestricted
 public import PaperIV.SpreadValueTransfer
+public import PaperIV.SubgraphPadding
 public import PaperIV.SymmetrizationBarrier
 public import PaperIV.SymmetrizationInvariantBarrier
 public import PaperIV.SymmetrizationMetricStep

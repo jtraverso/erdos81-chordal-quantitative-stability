@@ -9,7 +9,20 @@
     "ErdosPaperIV.theorem_6_1",
     "ErdosPaperIV.corollary_6_1a",
     "ErdosPaperIV.identity_6_7b",
-    "ErdosPaperIV.corollary_6_2"
+    "ErdosPaperIV.corollary_6_2",
+    "ErdosPaperIV.theorem_C",
+    "ErdosPaperIV.theorem_C_prime",
+    "ErdosPaperIV.corollary_6_3",
+    "ErdosPaperIV.corollary_6_3_equality",
+    "ErdosPaperIV.proposition_6_3a",
+    "ErdosPaperIV.proposition_6_3a_deficit_one",
+    "ErdosPaperIV.proposition_6_4",
+    "ErdosPaperIV.proposition_6_4_integral",
+    "ErdosPaperIV.theorem_6_5_partition_bound",
+    "ErdosPaperIV.theorem_6_5_stability",
+    "ErdosPaperIV.corollary_6_6",
+    "ErdosPaperIV.corollary_6_6_sMax",
+    "ErdosPaperIV.chordal_gap_linear_cliqueFree"
   ],
   "definition_names": [],
   "permitted_axioms": [

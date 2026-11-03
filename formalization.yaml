@@ -18,7 +18,19 @@ project:
     conclusions of Theorem 6.1 and, for it, every partition with at most M(n) + τ pieces has at
     most τ + 48δ noncanonical pieces (Corollary 6.1a); the root-defect identity (6.7b); and the eventual classification of the
     extremal chordal graphs as complete-split graphs with a core of optimal size (Corollary 6.2).
-    Eight statements. The thresholds N are existential; b and N are not claimed optimal.
+    Version 2 adds the fixed-defect results for graphs of rooted simplicial defect at most s:
+    the sharp eventual bound Q_s(n) = M(n + s) − C(s + 1, 2), attained by a partition optimal among
+    all clique partitions (Theorem C); same-root stability with A_s = 2·10⁴¹·(s + 1)⁸ for
+    0 ≤ δ ≤ γn², edit distance at most A_s δ, at most τ + (1 + 7A_s)δ noncanonical pieces carrying
+    at most 10τ + 10(1 + 7A_s)δ edges (Theorem C′); comparison with an optimal-size template at
+    distance at most A_s δ + n√((1 + 4A_s)δ) and the equality case cp = c₄ = Q_s(n) (Corollary 6.3);
+    the necessity of the square-root term (Proposition 6.3a); the bounds F₄(G) ≤ M(n − s) + ns
+    (minus C(s + 1, 2) when 4s ≤ n) and their integral form up to εn² (Proposition 6.4); the
+    sublinear-defect bound n²/6 + o(n²) and root stability (Theorem 6.5); the bound Q_s(n) for all
+    s ≤ S once n ≥ T(P(S)), an explicit tower (Corollary 6.6); and the annex inequality: a chordal
+    K_{d+2}-free graph has fractional triangle packing number at most ν₃ + (10 + d/2)n (G.1).
+    21 statements. The thresholds N and γ in Theorems B, C, C′ and Corollary 6.3 are existential;
+    b, N, A_s and the tower are not claimed optimal.
   authors:
     - "Juan Pablo Traverso Gianini"
   license: "Apache-2.0"
@@ -36,15 +48,19 @@ sources:
     id: "doi:10.5281/zenodo.23479507"
     type: "preprint"
     location: >-
-      Erdős #81 series, Paper IV, preprint v1.24.1: Theorems A, B, 3.1 and 6.1, Corollaries 6.1a
-      and 6.2, identity (6.7b) and the optimality of the quadratic coefficient (§6.3). In the series
+      Erdős #81 series, Paper IV, preprint v1.24.1: Theorems A, B, C, C′, 3.1, 6.1 and 6.5,
+      Corollaries 6.1a, 6.2, 6.3 and 6.6, Propositions 6.3a and 6.4, identity (6.7b), the
+      optimality of the quadratic coefficient (§6.3) and inequality (G.1) of the bounded-clique-gap
+      annex. In the series
       collection on Zenodo (series concept DOI 10.5281/zenodo.21273143) and in
       github.com/jtraverso/erdos-81-chordal-clique-partitions (preprints/PAPER_IV).
     relationship: "formalizes"
     note: >-
       The proofs are the author's Lean freeze of the paper (piv-v12-fb459343d234, Lean 4.28; 317 of
       its modules from the Lean 4.35 port in the series Note II), ported to Lean v4.35.0-rc3. The
-      formal companion of the paper (v1.24) maps the statements to these declarations.
+      formal companion of the paper (v1.24) maps the statements to these declarations. The annex
+      modules are preprints/PAPER_IV/05_formalization/lean_v1.0_gap_annex of the series repository
+      (Lean 4.28).
     license: "unknown"
     author_endorsement: "participated"
   - title: "Clique partitions and bounded simplicial defect"
@@ -107,13 +123,13 @@ related_formalizations:
 
 status:
   scope: >-
-    The eight statements are proved for every finite simple graph on Fin n (Theorems A, B, 6.1,
-    6.2 and the quadratic coefficient for chordal graphs; Theorem 3.1 for all graphs; identity
-    (6.7b) for every finite vertex type). Known gaps relative to the paper: Theorem C, Theorem C′,
-    Corollary 6.3, Proposition 6.3a and the uniform bounds of §6.7 (Proposition 6.4, Theorem 6.5,
-    Corollary 6.6) are proved in the freeze but not yet ported; Corollary 3.5, Theorem 5.0,
-    Corollary 5.4 and Proposition D.3 are proved in the library but not stated in the Challenge;
-    the bounded-clique-gap annex is not included.
+    The 21 statements are proved for finite simple graphs on Fin n (Theorems A, B, 6.1, 6.2 and the
+    quadratic coefficient for chordal graphs; Theorems C, C′, 6.5, Corollaries 6.3, 6.6 and
+    Propositions 6.3a, 6.4 for graphs of bounded or sublinear rooted simplicial defect; Theorem 3.1
+    for all graphs; identity (6.7b) and (G.1) for every finite vertex type). Known gaps relative to
+    the paper: Corollary 3.5, Theorem 5.0, Corollary 5.4 and Proposition D.3 are proved in the
+    library but not stated in the Challenge. Version 2 adds 13 statements; the eight of version 1
+    and their definitions are unchanged.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: []
@@ -160,12 +176,14 @@ automation:
       framework: "Claude Code (Anthropic)"
       tool_setup: >-
         Ported the freeze to Lean v4.35.0-rc3 and the module system, replaced the nibble, chordal
-        and clique-tree modules by the registered entries, repaired four proofs, wrote the
+        and clique-tree modules by the registered entries, repaired four proofs, ported the
+        version 2 modules and the bounded-clique-gap annex (current Mathlib API, local repairs
+        where the new elaborator or kernel behaves differently), wrote the
         Challenge/Solution pair and the packaging, and checked it with a local build, a comparison
         of the elaborated Challenge and Solution statements and definitions (pp.all) and #print
         axioms (Lean v4.35.0-rc3, Mathlib c55e6e786f49471c72fbddbec5415808896aec1e).
       cost:
-        wall_time: "about one day"
+        wall_time: "about three days (versions 1 and 2)"
         spend_usd: "subscription-based"
         hardware: "local machine"
       prompting_notes: "Natural-language instructions in Spanish, directed by the author."
@@ -184,7 +202,10 @@ fidelity:
     maximum is stated as the existence, for each large n, of a chordal graph with an order-four
     partition of size M(n) that is optimal among all clique partitions, together with the upper
     bound. Theorem 6.1 uses the explicit constants of the formal companion (117/1825, 12687/20000,
-    16) and γ = 10⁻¹⁶/4. In Theorem 3.1 the gains are 2 for a triangle and 5 for a K₄, a fractional
+    16) and γ = 10⁻¹⁶/4. Rooted simplicial defect, the templates and Q_s(n) follow the paper's
+    definitions as written in the Challenge; c₄ = Q_s(n) and cp = Q_s(n) are expressed by witnesses
+    and lower bounds over all partitions; Theorem 6.5 is stated for sequences of graphs with
+    Filter.atTop and little-o (Asymptotics). In Theorem 3.1 the gains are 2 for a triangle and 5 for a K₄, a fractional
     packing has load at most 1 on every edge of G, and a physical packing is a family of
     edge-disjoint triangles and K₄'s of G.
 
@@ -208,6 +229,19 @@ alignment:
     - {source: "Corollary 6.1a (stability of partitions)", lean: "ErdosPaperIV.corollary_6_1a", module: "PaperIVChallenge", status: "proved"}
     - {source: "Identity (6.7b)", lean: "ErdosPaperIV.identity_6_7b", module: "PaperIVChallenge", status: "proved"}
     - {source: "Corollary 6.2 (eventual classification)", lean: "ErdosPaperIV.corollary_6_2", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Theorem C (fixed rooted simplicial defect)", lean: "ErdosPaperIV.theorem_C", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Theorem C′ (fixed-defect same-root stability)", lean: "ErdosPaperIV.theorem_C_prime", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Corollary 6.3, (6.17)", lean: "ErdosPaperIV.corollary_6_3", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Corollary 6.3, (6.18)", lean: "ErdosPaperIV.corollary_6_3_equality", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Proposition 6.3a (square-root obstruction)", lean: "ErdosPaperIV.proposition_6_3a", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Proposition 6.3a, deficit one", lean: "ErdosPaperIV.proposition_6_3a_deficit_one", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Proposition 6.4 (finite fractional bounds)", lean: "ErdosPaperIV.proposition_6_4", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Proposition 6.4, integral form", lean: "ErdosPaperIV.proposition_6_4_integral", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Theorem 6.5, (6.24)", lean: "ErdosPaperIV.theorem_6_5_partition_bound", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Theorem 6.5, (6.25)–(6.26)", lean: "ErdosPaperIV.theorem_6_5_stability", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Corollary 6.6 (exact bound, uniform in the defect)", lean: "ErdosPaperIV.corollary_6_6", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Corollary 6.6, (6.29)", lean: "ErdosPaperIV.corollary_6_6_sMax", module: "PaperIVChallenge", status: "proved"}
+    - {source: "Annex, inequality (G.1) (bounded clique gap)", lean: "ErdosPaperIV.chordal_gap_linear_cliqueFree", module: "PaperIVChallenge", status: "proved"}
 
 acknowledgements: >-
   Mathlib and the Lean community.
